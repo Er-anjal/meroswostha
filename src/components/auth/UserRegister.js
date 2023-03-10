@@ -8,13 +8,22 @@ import {connect} from 'react-redux';
 
 const UserRegister = ({ setAlert, register, isUserAuthenticated }) => {
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
+        firstName: '',
+        middleName: '',
+        lastName: '',
+        bloodGroup: '',
+        gender:'',
+        emailAddress: '',
+        phoneNumber: '',
+        mobileNumber:'',
+        address:'',
+        profileImage:'',
+        dateOfBirth:'',
         password: '',
         password2: ''
     });
 
-    const {name, email, password, password2} = formData;
+    const {firstName,middleName,lastName,bloodGroup,gender, emailAddress,phoneNumber,mobileNumber,address,profileImage,dateOfBirth, password, password2} = formData;
     const onChange = e => setFormData({
         ...formData,
         [e.target.name]: e.target.value
@@ -43,6 +52,42 @@ const UserRegister = ({ setAlert, register, isUserAuthenticated }) => {
                             </h1>
                             </div>
                             <form onSubmit={e => onSubmit(e)}>
+                            <div className="form-group">
+                                <label className="label" for="exampleInputEmail1">First Name</label>
+                                <input 
+                                    type="text"
+                                    className="form-control" 
+                                    placeholder="Enter your First Name." 
+                                    name="firstName"
+                                    value={firstName}
+                                    onChange={e => onChange(e)}
+                                />
+                                
+                                </div>
+                                <div className="form-group">
+                                <label className="label" for="exampleInputEmail1">Middle Name</label>
+                                <input 
+                                    type="text"
+                                    className="form-control" 
+                                    placeholder="Enter your Middle Name." 
+                                    name="middleName"
+                                    value={middleName}
+                                    onChange={e => onChange(e)}
+                                />
+                                
+                                </div>
+                                <div className="form-group">
+                                <label className="label" for="exampleInputEmail1">Last Name</label>
+                                <input 
+                                    type="test"
+                                    className="form-control" 
+                                    placeholder="Enter your Last Name." 
+                                    name="lastName"
+                                    value={lastName}
+                                    onChange={e => onChange(e)}
+                                />
+                                
+                                </div>
                                 <div className="form-group">
                                 <label className="label" for="exampleInputEmail1">Email address</label>
                                 <input 
@@ -50,19 +95,74 @@ const UserRegister = ({ setAlert, register, isUserAuthenticated }) => {
                                     className="form-control" 
                                     placeholder="Enter your email address." 
                                     name="email"
-                                    value={email}
+                                    value={emailAddress}
                                     onChange={e => onChange(e)}
                                 />
                                 
                                 </div>
                                 <div className="form-group">
-                                <label className="label" for="exampleInputEmail1">Full Name</label>
+                                <label className="label" for="exampleInputEmail1">Gender</label>
                                 <input 
                                     type="text"
                                     className="form-control" 
-                                    placeholder="Enter your full name." 
-                                    name="name"
-                                    value={name}
+                                    placeholder="Enter your Gender." 
+                                    name="gender"
+                                    value={gender}
+                                    onChange={e => onChange(e)}
+                                />
+                                </div>
+                                <div className="form-group">
+                                <label className="label" for="exampleInputEmail1">Date Of Birth</label>
+                                <input 
+                                    type="number"
+                                    className="form-control" 
+                                    placeholder="Enter your Date Of Birth." 
+                                    name="dateOfBirth"
+                                    value={dateOfBirth}
+                                    onChange={e => onChange(e)}
+                                />
+                                </div>
+                                <div className="form-group">
+                                <label className="label" for="exampleInputEmail1">Blood Group</label>
+                                <input 
+                                    type="number"
+                                    className="form-control" 
+                                    placeholder="Enter your Blood Group." 
+                                    name="bloodGroup"
+                                    value={bloodGroup}
+                                    onChange={e => onChange(e)}
+                                />
+                                </div>
+                                <div className="form-group">
+                                <label className="label" for="exampleInputEmail1">Phone Number</label>
+                                <input 
+                                    type="text"
+                                    className="form-control" 
+                                    placeholder="Enter your Phone Number." 
+                                    name="phoneNumber"
+                                    value={phoneNumber}
+                                    onChange={e => onChange(e)}
+                                />
+                                </div>
+                                <div className="form-group">
+                                <label className="label" for="exampleInputEmail1">Mobile Number</label>
+                                <input 
+                                    type="text"
+                                    className="form-control" 
+                                    placeholder="Enter your Mobile Number." 
+                                    name="mobileNumber"
+                                    value={mobileNumber}
+                                    onChange={e => onChange(e)}
+                                />
+                                </div>
+                                <div className="form-group">
+                                <label className="label" for="exampleInputEmail1">Address</label>
+                                <input 
+                                    type="text"
+                                    className="form-control" 
+                                    placeholder="Enter your Address." 
+                                    name="address"
+                                    value={address}
                                     onChange={e => onChange(e)}
                                 />
                                 </div>
@@ -92,7 +192,7 @@ const UserRegister = ({ setAlert, register, isUserAuthenticated }) => {
                             </form>
                         </div>
                         <div className="img-side">
-                            <img className="register-user" src={require("../../img/userreg.svg")} alt="" style={{height:"450px"}} />
+                            {/* <img className="register-user" src={require("../../img/userreg.svg")} alt="" style={{height:"450px"}} /> */}
                         </div>
                     </div>
                 </div>
